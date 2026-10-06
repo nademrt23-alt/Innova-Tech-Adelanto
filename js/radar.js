@@ -1,0 +1,7 @@
+// AeroGuard — radar (simulación ilustrativa)
+window.AG=window.AG||{};
+AG.Radar=(function(){let cv,ctx,sweep=0,speed=1,paused=false;const blips=[{a:1.1,r:.55},{a:2.6,r:.75},{a:4.4,r:.4}];const seen=new Set();
+function draw(){const w=cv.width,h=cv.height,cx=w/2,cy=h/2,R=w/2-20;ctx.clearRect(0,0,w,h);ctx.strokeStyle='rgba(46,230,168,.3)';[.33,.66,1].forEach(f=>{ctx.beginPath();ctx.arc(cx,cy,R*f,0,7);ctx.stroke();});ctx.beginPath();ctx.moveTo(cx-R,cy);ctx.lineTo(cx+R,cy);ctx.moveTo(cx,cy-R);ctx.lineTo(cx,cy+R);ctx.stroke();ctx.save();ctx.translate(cx,cy);ctx.rotate(sweep);const g=ctx.createLinearGradient(0,0,R,0);g.addColorStop(0,'rgba(46,230,168,.5)');g.addColorStop(1,'rgba(46,230,168,0)');ctx.fillStyle=g;ctx.beginPath();ctx.moveTo(0,0);ctx.arc(0,0,R,-.5,0);ctx.closePath();ctx.fill();ctx.restore();blips.forEach((b,i)=>{const x=cx+Math.cos(b.a)*R*b.r,y=cy+Math.sin(b.a)*R*b.r;let d=(b.a-sweep)%(Math.PI*2);if(d<0)d+=Math.PI*2;if(d<.1)seen.add(i);ctx.fillStyle='rgba(255,107,107,'+(seen.has(i)?.9:.12)+')';ctx.beginPath();ctx.arc(x,y,7,0,7);ctx.fill();});sweep+=.02*speed;if(sweep>Math.PI*2)sweep=0;if(!paused)requestAnimationFrame(draw);}
+function init(){cv=document.getElementById('radar');if(!cv)return;ctx=cv.getContext('2d');if(AG.reduced){draw();paused=true;return;}draw();}
+return{init,pause(){paused=!paused;if(!paused)draw();},reset(){sweep=0;seen.clear();if(paused)draw();},speed(s){speed=s;}};})();
+document.addEventListener('DOMContentLoaded',AG.Radar.init);

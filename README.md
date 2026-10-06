@@ -1,29 +1,26 @@
-# 🛸 AeroGuard — Fase 1: diseño y validación del concepto
+# 🛸 AeroGuard — Dron autónomo para monitoreo ambiental
 
-Proyecto STEAM de 5 integrantes en Chiclayo, Lambayeque. Dron autónomo diseñado para recorrer rutas GPS, capturar imágenes aéreas, medir PM1.0/PM2.5/PM10 y generar alertas georreferenciadas de posible agua estancada para verificación en campo.
+**Proyecto STEAM** de un equipo de 5 integrantes. AeroGuard es un dron autónomo que recorre rutas preestablecidas, captura imágenes y usa inteligencia artificial para detectar posibles charcos de agua contaminada y estimar de manera aproximada los microplásticos en el aire.
 
-> No hay resultados de pruebas todavía. Todas las capacidades son objetivos de diseño o metas de la fase de pruebas. Las simulaciones son ilustrativas.
+## 🛸 Modelos 3D interactivos
 
-## Estructura
+- **AeroGuard Eco:** versión económica para aprendizaje (S/ 700 – S/ 1,300).
+- **AeroGuard Pro:** versión profesional con GPS RTK y cámara térmica (S/ 3,500 o más).
 
-- `index.html` — página principal (S0–S14).
-- `css/motion.css`, `css/viewer.css` — sistema de diseño y visor.
-- `js/` — utils, drone-models, viewer, radar, route, mission-sim, ui-animations, main.
-- `docs/PARTE3.md` — publicación, QA, guion de exposición y banco de preguntas.
+Ambos modelos 3D giran automáticamente, tienen hélices animadas, cámara con luz y se detienen al pasar el cursor.
 
-## Correcciones clave
+## 📡 Detección y ruta
 
-- PMS5003 mide PM2.5/PM10; no detecta microplásticos (línea futura).
-- Cámara identifica posible agua estancada; contaminación se confirma en campo.
-- Eco procesa en tierra; Pro puede analizar a bordo.
-- Autonomías estimadas, sujetas a validación.
-- Eco: controladora ArduPilot/Betaflight + GPS; ESP32 = computadora de misión.
-- Marco legal: DGAC/MTC (verificar norma vigente).
+La página incluye un radar animado de detección y un mapa donde un dron recorre puntos GPS (waypoints) de forma continua.
 
-## Publicación
+## 💚 Impacto en la salud
 
-GitHub Pages: rama `main`, carpeta raíz. Enlace: https://nademrt23-alt.github.io/Innova-Tech-Adelanto/
+Detectar charcos contaminados y mala calidad del aire ayuda a reducir el riesgo de dengue, zika, infecciones estomacales y enfermedades respiratorias.
 
-## Licencia
+## ✅ Conclusión
 
-[COMPLETAR: licencia del proyecto]
+AeroGuard demuestra que un dron autónomo con cámara, sensores e IA puede ayudar a detectar zonas sospechosas de contaminación y proteger la salud y el ambiente.
+
+## 🌐 Página interactiva
+
+Activa **GitHub Pages** en la rama `main` para ver la versión con animaciones avanzadas, modelos 3D interactivos, radar, mapa animado y comparador de versiones.

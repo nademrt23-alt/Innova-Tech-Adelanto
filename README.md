@@ -4,10 +4,14 @@
 
 ## 🛸 Modelos 3D interactivos
 
-- **AeroGuard Eco:** versión económica para aprendizaje (S/ 700 – S/ 1,300).
+- **AeroGuard Eco:** versión económica (S/ 700 – S/ 1,300).
 - **AeroGuard Pro:** versión profesional con GPS RTK y cámara térmica (S/ 3,500 o más).
 
-Ambos modelos 3D giran automáticamente y se detienen al pasar el cursor.
+Ambos modelos 3D giran automáticamente, tienen hélices animadas, cámara con luz y se detienen al pasar el cursor.
+
+## 📡 Detección y ruta
+
+La página incluye un radar animado de detección y un mapa donde un dron recorre puntos GPS (waypoints) de forma continua.
 
 ## 💚 Impacto en la salud
 
@@ -19,4 +23,4 @@ AeroGuard demuestra que un dron autónomo con cámara, sensores e IA puede ayuda
 
 ## 🌐 Página interactiva
 
-Activa **GitHub Pages** en la rama `main` para ver la versión con animaciones avanzadas, modelos 3D interactivos y comparador de versiones.
+Activa **GitHub Pages** en la rama `main` para ver la versión con animaciones avanzadas, modelos 3D interactivos, radar, mapa animado y comparador de versiones.
